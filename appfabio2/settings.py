@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'widget_tweaks',
+
     # apps
     'accounts',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'appfabio2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,6 +120,8 @@ USE_L10N = True
 USE_TZ = True
 
 
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'core:home'
 AUTH_USER_MODEL = 'accounts.User'
 
 
