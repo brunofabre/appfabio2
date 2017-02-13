@@ -6,10 +6,50 @@
 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
 
+    <nav class="nav-custom z-depth-0">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">AppFabio2</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Jogos</a></li>
+                <li><a class="modal-trigger" href="#modal-login">Modal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="modal-login" class="modal">
+        <div class="col m4">
+            <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+        </div>
+
+    </div>
+
     <script src="assets/js/jquery-2.1.1.min.js"></script>
     <script src="assets/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal();
+            $('.modal').modal({
+              dismissible: true, // Modal can be dismissed by clicking outside of the modal
+              opacity: .5, // Opacity of modal background
+              inDuration: 300, // Transition in duration
+              outDuration: 200, // Transition out duration
+              startingTop: '4%', // Starting top style attribute
+              endingTop: '10%', // Ending top style attribute
+            }
+          );
+        });
+    </script>
 </body>
 </html>

@@ -16,7 +16,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <a href="{% url 'core:sports' %}" class="btn btn-primary">Esportes</a> | <a href="{% url 'core:creategame' %}" class="btn btn-primary">Adicionar Jogo</a>
+                                    <a href="{% url 'games:sports' %}" class="btn btn-primary">Esportes</a> | <a href="{% url 'games:creategame' %}" class="btn btn-primary">Adicionar Jogo</a>
                                 </div>
                             </div>
                         </div>
@@ -42,13 +42,13 @@
                                     <div class="col-md-6 col-xs-6" align="right">
                                         <p style="font-size: 70px; color: red;">{{ game.score_red }}</p>
                                         {% if perms.core %}
-                                            <a href="{% url 'core:add_score_red' game.pk %}" class="btn btn-primary">Add</a>
+                                            <a href="{% url 'games:add_score_red' game.pk %}" class="btn btn-primary">Add</a>
                                         {% endif %}
                                     </div>
                                     <div class="col-md-6 col-xs-6" align="left">
                                         <p style="font-size: 70px; color: blue;">{{ game.score_blue }}</p>
                                         {% if perms.core %}
-                                            <a href="{% url 'core:add_score_blue' game.pk %}" class="btn btn-primary">Add</a>
+                                            <a href="{% url 'games:add_score_blue' game.pk %}" class="btn btn-primary">Add</a>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -57,10 +57,10 @@
                                         Começou em - {{ game.start }}
                                     </div>
                                 </div>
-                                {% if perms.core %}
+                                {% if perms.games %}
                                     <div class="row">
                                         <div class="col-md-12" align="right">
-                                            <a href="{% url 'core:finalize' game.pk %}" class="btn btn-primary">Finalizar Jogo</a>
+                                            <a href="{% url 'games:finalize' game.pk %}" class="btn btn-primary">Finalizar Jogo</a>
                                         </div>
                                     </div>
                                 {% endif %}
@@ -82,7 +82,7 @@
                                 <tr>
                                     <th>Nome</th>
                                     <th>Começa</th>
-                                    {% if perms.core %}
+                                    {% if perms.games %}
                                         <th>Ação</th>
                                     {% endif %}
                                 </tr>
@@ -93,8 +93,8 @@
                                         <tr>
                                             <td>{{ game.name }}</td>
                                             <td>{{ game.start }}</td>
-                                            {% if perms.core %}
-                                                <td><a href="{% url 'core:initiate' game.pk %}" class="btn btn-primary">Começar</a></td>
+                                            {% if perms.games %}
+                                                <td><a href="{% url 'games:initiate' game.pk %}" class="btn btn-primary">Começar</a></td>
                                             {% endif %}
                                         </tr>
                                     {% endif %}

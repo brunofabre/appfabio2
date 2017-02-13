@@ -27,7 +27,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Inicio</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'core:games' %}">Jogos</a></li>
+                    <li><a href="{% url 'games:home' %}">Jogos</a></li>
                     <li><a href="{% url 'logout' %}">Sair</a></li>
                 {% else %}
                     <li><a href="{% url 'accounts:register' %}">Registro</a></li>

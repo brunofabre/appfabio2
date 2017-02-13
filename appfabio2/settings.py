@@ -25,7 +25,7 @@ SECRET_KEY = '5-g+1pe*^#^=3&+6-*!)80^+^agc+cvv!u@+80(r=c040h^6^w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['appfabio2.herokuapp.com']
+ALLOWED_HOSTS = ['appfabio2.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # apps
     'accounts',
     'core',
+    'games',
 ]
 
 MIDDLEWARE = [

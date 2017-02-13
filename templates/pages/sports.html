@@ -10,7 +10,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <a href="{% url 'core:createsport' %}" class="btn btn-primary">Adicionar Esporte</a>
+                        <a href="{% url 'games:createsport' %}" class="btn btn-primary">Adicionar Esporte</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                                         <td>{{ sport.name }}</td>
                                         <td>{{ sport.game_time }}</td>
                                         <td>
-                                            <form action="{% url 'core:deletesport' sport.pk %}" method="post">
+                                            <form action="{% url 'games:deletesport' sport.pk %}" method="post">
                                                 {% csrf_token %}
                                                 <input type="hidden" name="sport_pk" value="{{ sport.pk }}">
                                                 <button type="submit" class="btn btn-primary">Excluir</button>
