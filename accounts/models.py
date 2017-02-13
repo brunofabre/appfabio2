@@ -11,7 +11,7 @@ from django.contrib.auth.models import AbstractUser, UserManager, PermissionsMix
 
 class User(AbstractUser, PermissionsMixin):
     username = models.CharField(
-        'Apelido / Usuário', max_length=30, unique=True, validators=[
+        'Nome de Usuário', max_length=30, unique=True, validators=[
             validators.RegexValidator(
                 re.compile('^[\w.@+-]+$'),
                 'Informe um nome de usuário válido. '
