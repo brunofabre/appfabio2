@@ -19,7 +19,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">App Fabio 1</a>
+            <a class="navbar-brand" href="{% url 'core:home' %}">App Fabio 1</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,6 +30,7 @@
                     <li><a href="{% url 'core:games' %}">Jogos</a></li>
                     <li><a href="{% url 'logout' %}">Sair</a></li>
                 {% else %}
+                    <li><a href="{% url 'accounts:register' %}">Registro</a></li>
                     <li><a href="{% url 'login' %}">Entrar</a></li>
                 {% endif %}
             </ul>
